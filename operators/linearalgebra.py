@@ -5,7 +5,7 @@ from operators.arithmatics import Arithmatric
 from operators.calculus import Calculus
 from validators import Valids
 
-class LinAlgebra(Operators, Valids, Exceptions, Utils, Constants):
+class LinAlgebra(Valids, Matrices, Arithmatric, Calculus):
     def __init__(self):
         super().__init__()
         self.name = "LinAlgebra"
