@@ -5,7 +5,7 @@ from operators.trigonometrics import Trigonometric
 
 class Calculus:
     def __init__(self):
-        self.matrices = Matrices()
+        self.matrices = Matrices(data=None)
         self.x = sp.symbols('x')
         self.y = sp.symbols('y')
         self.z = sp.symbols('z')
