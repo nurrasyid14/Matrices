@@ -11,19 +11,24 @@ class Determinant:
     def sarrus(self, matr):
         if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrices instance.")
-        if not Valids.is_square(matr) or matr.rows != 3 or matr.rows != 2:
-            raise ValueError("Sarrus' rule is only applicable to 3x3 square matrices.")
-        
-        
+        if not Valids.is_square(matr) or matr.rows not in (2, 3):
+            raise ValueError("Sarrus' rule is only applicable to 2x2 or 3x3 square matrices.")
+
         a = matr.data
+
+        # Case: 2x2 matrix
+        if matr.rows == 2:
+            return a[0][0] * a[1][1] - a[0][1] * a[1][0]
+
+        # Case: 3x3 matrix
         determinant = (a[0][0] * a[1][1] * a[2][2] +
-                       a[0][1] * a[1][2] * a[2][0] +
-                       a[0][2] * a[1][0] * a[2][1]) - (
-                       a[0][2] * a[1][1] * a[2][0] +
-                       a[0][0] * a[1][2] * a[2][1] +
-                       a[0][1] * a[1][0] * a[2][2])
+                    a[0][1] * a[1][2] * a[2][0] +
+                    a[0][2] * a[1][0] * a[2][1]) - (
+                    a[0][2] * a[1][1] * a[2][0] +
+                    a[0][0] * a[1][2] * a[2][1] +
+                    a[0][1] * a[1][0] * a[2][2])
         return determinant
-    
+
     def laplace(self, matr):
         if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrices instance.")
