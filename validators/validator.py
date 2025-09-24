@@ -2,7 +2,7 @@
 
 from matrice import Matrices
 
-class Validators:
+class Valids:
     def __init__(self):
         self.name = "Validators"
 
