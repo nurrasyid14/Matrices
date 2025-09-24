@@ -8,6 +8,7 @@ class Matrices:
     """
 
     def __init__(self, data):
+        data = data if data is not None else []
         if not isinstance(data, list) or not all(isinstance(row, list) for row in data):
             raise TypeError("Data harus berupa list of lists.")
 
