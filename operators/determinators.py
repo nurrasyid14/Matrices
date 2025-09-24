@@ -1,14 +1,17 @@
 from matrice import Matrices
 from operators.arithmatics import Arithmatric
+from validators.validator import Valids
 
 class Determinant:
     def __init__(self):
         self.name = "Determinant"
+        self.valid = Valids()
+        self.arith = Arithmatric()
 
     def sarrus(self, matrix):
         if not isinstance(matrix, Matrices):
             raise TypeError("Input must be a Matrices instance.")
-        if not matrix.is_square() or matrix.rows != 3:
+        if not Valids.is_square() or matrix.rows != 3:
             raise ValueError("Sarrus' rule is only applicable to 3x3 square matrices.")
         
         a = matrix.data
@@ -23,7 +26,7 @@ class Determinant:
     def laplace(self, matrix):
         if not isinstance(matrix, Matrices):
             raise TypeError("Input must be a Matrices instance.")
-        if not matrix.is_square():
+        if not Valids.is_square():
             raise ValueError("Laplace expansion is only applicable to square matrices.")
         
         def minor(m, i, j):
