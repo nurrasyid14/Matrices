@@ -7,44 +7,44 @@ class Valids:
         self.name = "Validators"
 
     @staticmethod
-    def is_valid_matrix(matrix):
-        if not isinstance(matrix, Matrices):
+    def is_valid_matr(matr):
+        if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrice instance.")
-        return matrix.is_valid()
+        return matr.is_valid()
     
     @staticmethod
-    def is_square(matrix):
-        if not isinstance(matrix, Matrices):
+    def is_square(matr):
+        if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrice instance.")
-        return matrix.is_square()
+        return matr.is_square()
 
     @staticmethod        
-    def is_identity(matrix):
-        if not isinstance(matrix, Matrices):
+    def is_identity(matr):
+        if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrice instance.")
-        return matrix.is_identity()
+        return matr.is_identity()
 
     @staticmethod    
-    def is_symmetric(matrix):
-        if not isinstance(matrix, Matrices):
+    def is_symmetric(matr):
+        if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrice instance.")
-        return matrix.is_symmetric()
+        return matr.is_symmetric()
 
     @staticmethod    
-    def is_orthogonal(matrix):
-        if not isinstance(matrix, Matrices):
+    def is_orthogonal(matr):
+        if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrice instance.")
-        return matrix.is_orthogonal()
+        return matr.is_orthogonal()
 
     @staticmethod   
-    def has_inverse(matrix):
-        if not isinstance(matrix, Matrices):
+    def has_inverse(matr):
+        if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrice instance.")
-        return matrix.has_inverse()
+        return matr.has_inverse()
 
     @staticmethod    
-    def is_row_echelon(matrix):
-        if not isinstance(matrix, Matrices):
+    def is_row_echelon(matr):
+        if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrice instance.")
-        return matrix.is_row_echelon()  
+        return matr.is_row_echelon()  
     

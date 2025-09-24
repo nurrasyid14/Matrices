@@ -6,38 +6,38 @@ class Trigonometric:
     def __init__(self):
         pass
 
-    def sin(self, matrix):
-        if isinstance(matrix, matrices.Matrix):
-            return matrices.Matrix(np.sin(matrix.data))
+    def sin(self, matr):
+        if isinstance(matr, matrices.Matrix):
+            return matrices.Matrix(np.sin(matr.data))
         else:
             raise TypeError("Input must be a Matrix instance")
 
-    def cos(self, matrix):
-        if isinstance(matrix, matrices.Matrix):
-            return matrices.Matrix(np.cos(matrix.data))
+    def cos(self, matr):
+        if isinstance(matr, matrices.Matrix):
+            return matrices.Matrix(np.cos(matr.data))
         else:
             raise TypeError("Input must be a Matrix instance")
 
-    def tan(self, matrix):
-        if isinstance(matrix, matrices.Matrix):
-            return matrices.Matrix(np.tan(matrix.data))
+    def tan(self, matr):
+        if isinstance(matr, matrices.Matrix):
+            return matrices.Matrix(np.tan(matr.data))
         else:
             raise TypeError("Input must be a Matrix instance")
         
-    def cot(self, matrix):
-        if isinstance(matrix, matrices.Matrix):
-            return matrices.Matrix(1/np.tan(matrix.data))
+    def cot(self, matr):
+        if isinstance(matr, matrices.Matrix):
+            return matrices.Matrix(1/np.tan(matr.data))
         else:
             raise TypeError("Input must be a Matrix instance")
         
-    def sec(self, matrix):
-        if isinstance(matrix, matrices.Matrix):
-            return matrices.Matrix(1/np.cos(matrix.data))
+    def sec(self, matr):
+        if isinstance(matr, matrices.Matrix):
+            return matrices.Matrix(1/np.cos(matr.data))
         else:
             raise TypeError("Input must be a Matrix instance")
         
-    def csc(self, matrix):
-        if isinstance(matrix, matrices.Matrix):
-            return matrices.Matrix(1/np.sin(matrix.data))
+    def csc(self, matr):
+        if isinstance(matr, matrices.Matrix):
+            return matrices.Matrix(1/np.sin(matr.data))
         else:
             raise TypeError("Input must be a Matrix instance")

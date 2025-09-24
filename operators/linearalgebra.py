@@ -10,17 +10,17 @@ class LinAlgebra(Valids, Matrices, Arithmatric, Calculus):
         super().__init__()
         self.name = "LinAlgebra"
     
-    def dot_product(self, matrix_a, matrix_b):
-        if not self.is_valid_matrix(matrix_a) or not self.is_valid_matrix(matrix_b):
+    def dot_product(self, matr_a, matr_b):
+        if not self.is_valid_matr(matr_a) or not self.is_valid_matr(matr_b):
             raise ValueError("Invalid matrices provided.")
-        if len(matrix_a[0]) != len(matrix_b):
-            raise ValueError("Incompatible matrix dimensions for dot product.")
+        if len(matr_a[0]) != len(matr_b):
+            raise ValueError("Incompatible matr dimensions for dot product.")
         
-        result = [[0 for _ in range(len(matrix_b[0]))] for _ in range(len(matrix_a))]
-        for i in range(len(matrix_a)):
-            for j in range(len(matrix_b[0])):
-                for k in range(len(matrix_b)):
-                    result[i][j] += matrix_a[i][k] * matrix_b[k][j]
+        result = [[0 for _ in range(len(matr_b[0]))] for _ in range(len(matr_a))]
+        for i in range(len(matr_a)):
+            for j in range(len(matr_b[0])):
+                for k in range(len(matr_b)):
+                    result[i][j] += matr_a[i][k] * matr_b[k][j]
         return result
     
     def cross_product(self, vector_a, vector_b):
@@ -34,15 +34,15 @@ class LinAlgebra(Valids, Matrices, Arithmatric, Calculus):
         ]
         return result
     
-    def matrix_inverse(self, matrix):
-        if not self.is_valid_matrix(matrix):
-            raise ValueError("Invalid matrix provided.")
-        if len(matrix) != len(matrix[0]):
+    def matr_inverse(self, matr):
+        if not self.is_valid_matr(matr):
+            raise ValueError("Invalid matr provided.")
+        if len(matr) != len(matr[0]):
             raise ValueError("Only square matrices can be inverted.")
         
-        n = len(matrix)
-        identity = self.identity_matrix(n)
-        augmented = [row[:] + identity_row[:] for row, identity_row in zip(matrix, identity)]
+        n = len(matr)
+        identity = self.identity_matr(n)
+        augmented = [row[:] + identity_row[:] for row, identity_row in zip(matr, identity)]
         
         for i in range(n):
             pivot = augmented[i][i]
@@ -60,10 +60,10 @@ class LinAlgebra(Valids, Matrices, Arithmatric, Calculus):
         inverse = [row[n:] for row in augmented]
         return inverse
     
-    def identity_matrix(self, size):
+    def identity_matr(self, size):
         return [[1 if i == j else 0 for j in range(size)] for i in range(size)]
     
-    def transpose(self, matrix):
-        if not self.is_valid_matrix(matrix):
-            raise ValueError("Invalid matrix provided.")
-        return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+    def transpose(self, matr):
+        if not self.is_valid_matr(matr):
+            raise ValueError("Invalid matr provided.")
+        return [[matr[j][i] for j in range(len(matr))] for i in range(len(matr[0]))]
