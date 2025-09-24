@@ -14,9 +14,8 @@ class Valids:
     
     @staticmethod
     def is_square(matr):
-        if not isinstance(matr, Matrices):
-            raise TypeError("Input must be a Matrice instance.")
-        return matr.is_square()
+        """Check if a matrix object is square."""
+        return matr.rows == matr.cols
 
     @staticmethod        
     def is_identity(matr):
