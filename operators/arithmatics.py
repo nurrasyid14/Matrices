@@ -3,7 +3,7 @@ from matrice import Matrices
 
 class Arithmatric:
     def __init__(self):
-        self.matrice = Matrices()
+        self.matrice = Matrices(data=None)
         self.result = None
         self.history = []
         self.history_index = -1
