@@ -4,7 +4,6 @@ from matrice import Matrices
 from operators.arithmatics import Arithmatric
 from operators.calculus import Calculus
 from validators import Valids
-from utilities.exceptions import Exceptions
 
 class LinAlgebra(Operators, Valids, Exceptions, Utils, Constants):
     def __init__(self):
