@@ -1,4 +1,4 @@
-from matrice import Matrices
+import Matrices
 import numpy as np
 import sympy as sp
 from operators.trigonometrics import Trigonometric
