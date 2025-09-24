@@ -11,8 +11,9 @@ class Determinant:
     def sarrus(self, matr):
         if not isinstance(matr, Matrices):
             raise TypeError("Input must be a Matrices instance.")
-        if not Valids.is_square(matr) or matr.rows != 3:
+        if not Valids.is_square(matr) or matr.rows != 3 or matr.rows != 2:
             raise ValueError("Sarrus' rule is only applicable to 3x3 square matrices.")
+        
         
         a = matr.data
         determinant = (a[0][0] * a[1][1] * a[2][2] +
