@@ -6,37 +6,44 @@ class Valids:
     def __init__(self):
         self.name = "Validators"
 
-    def is_valid_matrix(self, matrix):
+    @staticmethod
+    def is_valid_matrix(matrix):
         if not isinstance(matrix, Matrices):
             raise TypeError("Input must be a Matrice instance.")
         return matrix.is_valid()
     
-    def is_square(self, matrix):
+    @staticmethod
+    def is_square(matrix):
         if not isinstance(matrix, Matrices):
             raise TypeError("Input must be a Matrice instance.")
         return matrix.is_square()
-        
-    def is_identity(self, matrix):
+
+    @staticmethod        
+    def is_identity(matrix):
         if not isinstance(matrix, Matrices):
             raise TypeError("Input must be a Matrice instance.")
         return matrix.is_identity()
-    
-    def is_symmetric(self, matrix):
+
+    @staticmethod    
+    def is_symmetric(matrix):
         if not isinstance(matrix, Matrices):
             raise TypeError("Input must be a Matrice instance.")
         return matrix.is_symmetric()
-    
-    def is_orthogonal(self, matrix):
+
+    @staticmethod    
+    def is_orthogonal(matrix):
         if not isinstance(matrix, Matrices):
             raise TypeError("Input must be a Matrice instance.")
         return matrix.is_orthogonal()
-    
-    def has_inverse(self, matrix):
+
+    @staticmethod   
+    def has_inverse(matrix):
         if not isinstance(matrix, Matrices):
             raise TypeError("Input must be a Matrice instance.")
         return matrix.has_inverse()
-    
-    def is_row_echelon(self, matrix):
+
+    @staticmethod    
+    def is_row_echelon(matrix):
         if not isinstance(matrix, Matrices):
             raise TypeError("Input must be a Matrice instance.")
         return matrix.is_row_echelon()  
